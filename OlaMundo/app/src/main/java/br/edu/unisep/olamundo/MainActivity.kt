@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +14,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun exibirMensagem(v : View) {
-        val t = Toast.makeText(this, "Olá Mundo!!!", Toast.LENGTH_LONG)
+        val nome = txtNome.text.toString()
+
+        val t = Toast.makeText(this, "Olá $nome !!", Toast.LENGTH_LONG)
         t.show()
     }
 
