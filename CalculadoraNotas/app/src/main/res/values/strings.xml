@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Calculadora Notas</string>
+    <string name="nota_g1">Nota G1:</string>
+    <string name="nota_g2">Nota G2:</string>
+    <string name="verificar">Verificar</string>
+    <string name="limpar">Limpar</string>
+    <string name="melhor_opcao">Melhor Opção</string>
+</resources>
