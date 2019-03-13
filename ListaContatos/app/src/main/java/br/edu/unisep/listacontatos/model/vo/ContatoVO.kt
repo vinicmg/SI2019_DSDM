@@ -1,4 +1,10 @@
 package br.edu.unisep.listacontatos.model.vo
 
-class ContatoVO {
+import java.io.Serializable
+
+data class ContatoVO (
+    var nome : String,
+    var email : String
+) : Serializable {
+
 }
