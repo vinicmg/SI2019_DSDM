@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ExemploNavegacao</string>
+    <string name="ir_tela_2">Ir para Tela 2</string>
+    <string name="tela_2">Você está na tela 2!</string>
+    <string name="voltar">Voltar</string>
+    <string name="ir_tela_3">Ir para a Tela 3</string>
+    <string name="informe_retorno">Informe o retorno:</string>
+    <string name="enviar">Enviar</string>
+</resources>
