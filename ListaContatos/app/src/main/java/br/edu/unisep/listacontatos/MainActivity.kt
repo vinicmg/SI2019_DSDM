@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         // Cria um objeto ContatosAdapter e associa ao RecyclerView.
         // Desta forma, os itens do RecyclerView serão gerados através deste adapter
-        listaContatos.adapter = ContatoAdapter(contatos)
+        listaContatos.adapter = ContatoAdapter(contatos, this::remover)
 
     }
 
@@ -45,6 +45,11 @@ class MainActivity : AppCompatActivity() {
 
         // Rola o scroll do RecyclerView até a posição do último item adicionado na lista
         listaContatos.scrollToPosition(contatos.size - 1)
+    }
+
+    fun remover(cont : ContatoVO) {
+        contatos.remove(cont)
+        listaContatos.adapter?.notifyDataSetChanged()
     }
 
 }

@@ -5,7 +5,7 @@ import android.view.View
 import br.edu.unisep.listacontatos.model.vo.ContatoVO
 import kotlinx.android.synthetic.main.item_contato.view.*
 
-class ContatoViewHolder(v : View) : RecyclerView.ViewHolder(v){
+class ContatoViewHolder(v : View, val fnExcluir : (ContatoVO) -> Unit) : RecyclerView.ViewHolder(v){
 
     fun bind(contato : ContatoVO) {
 
@@ -15,6 +15,13 @@ class ContatoViewHolder(v : View) : RecyclerView.ViewHolder(v){
         // dos atributos do objeto contato, recebido como parâmetro neste método
         itemView.lblNome.text = contato.nome
         itemView.lblEmail.text = contato.email
+
+        // Define um listener para o evento de click do botão excluir do item
+        // Ao clicar no botão excluir, será executada a função fnExcluir, recebida
+        // como parâmetro a partir do Adapter
+        itemView.btnExcluir.setOnClickListener {
+            fnExcluir(contato)
+        }
     }
 
 }

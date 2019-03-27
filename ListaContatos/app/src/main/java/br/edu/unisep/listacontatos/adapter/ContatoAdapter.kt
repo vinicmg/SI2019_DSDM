@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import br.edu.unisep.listacontatos.R
 import br.edu.unisep.listacontatos.model.vo.ContatoVO
 
-class ContatoAdapter(val dados : ArrayList<ContatoVO>) : RecyclerView.Adapter<ContatoViewHolder>() {
+class ContatoAdapter(val dados : ArrayList<ContatoVO>,
+                     val fnExcluir : (ContatoVO) -> Unit) : RecyclerView.Adapter<ContatoViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, pos: Int): ContatoViewHolder {
         // Cria um objeto LayoutInflater, que é responsável por carregar o layout xml
@@ -19,7 +20,7 @@ class ContatoAdapter(val dados : ArrayList<ContatoVO>) : RecyclerView.Adapter<Co
 
         // Cria o objeto ViewHolder, enviando como parâmetro o objeto gerado a partir do XML
         // do layout do item
-        val holder = ContatoViewHolder(view)
+        val holder = ContatoViewHolder(view, fnExcluir)
 
         return holder
 
