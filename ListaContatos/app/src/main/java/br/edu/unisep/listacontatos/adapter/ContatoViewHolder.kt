@@ -1,5 +1,6 @@
 package br.edu.unisep.listacontatos.adapter
 
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import br.edu.unisep.listacontatos.model.vo.ContatoVO
