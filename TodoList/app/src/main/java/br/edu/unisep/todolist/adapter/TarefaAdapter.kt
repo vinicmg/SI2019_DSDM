@@ -14,8 +14,7 @@ class TarefaAdapter(val tarefas : List<Tarefa>)
         val inflater = LayoutInflater.from(parent.context)
         val v = inflater.inflate(R.layout.item_tarefa, parent, false)
 
-        val viewHolder = TarefaViewHolder(v)
-        return viewHolder
+        return TarefaViewHolder(v)
     }
 
     override fun getItemCount(): Int {
