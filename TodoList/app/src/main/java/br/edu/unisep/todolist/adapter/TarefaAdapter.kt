@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import br.edu.unisep.todolist.R
 import br.edu.unisep.todolist.model.entity.Tarefa
+import kotlinx.android.synthetic.main.item_tarefa.view.*
 
 class TarefaAdapter(val tarefas : List<Tarefa>)
     : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
@@ -22,7 +23,10 @@ class TarefaAdapter(val tarefas : List<Tarefa>)
     }
 
     override fun onBindViewHolder(holder: TarefaViewHolder, pos: Int) {
+        val t = tarefas[pos]
 
+        holder.itemView.lblTitulo.text = t.titulo
+        holder.itemView.lblDescricao.text = t.descricao
     }
 
 
