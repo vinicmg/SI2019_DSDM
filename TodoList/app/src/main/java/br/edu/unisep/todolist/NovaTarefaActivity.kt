@@ -4,6 +4,7 @@ import android.app.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import br.edu.unisep.todolist.model.converter.LocalDateConverter
 import br.edu.unisep.todolist.model.db.TodoListDB
 import br.edu.unisep.todolist.model.entity.Tarefa
 import kotlinx.android.synthetic.main.activity_nova_tarefa.*
@@ -27,6 +28,13 @@ class NovaTarefaActivity : AppCompatActivity() {
             else -> 3
         }
 
+        tarefa.data = LocalDateConverter.stringToDate(txtData.text.toString())
+
+        val dao = TodoListDB.getDb(applicationContext).tarefaDAO()
+        dao.salvar(tarefa)
+
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
 }
