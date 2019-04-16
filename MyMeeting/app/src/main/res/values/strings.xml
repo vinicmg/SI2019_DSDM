@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyMeeting</string>
+    <string name="titulo">Título</string>
+    <string name="assunto">Assunto</string>
+    <string name="data">Data</string>
+    <string name="salvar">Salvar</string>
+    <string name="conteudo">Conteúdo</string>
+    <string name="tempo">Tempo</string>
+    <string name="min">(min)</string>
+</resources>
