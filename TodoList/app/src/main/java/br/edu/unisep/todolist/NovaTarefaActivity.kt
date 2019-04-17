@@ -36,6 +36,8 @@ class NovaTarefaActivity : AppCompatActivity() {
             } else {
                 gpPrioridade.check(R.id.rdAlta)
             }
+        } else {
+            tarefa = Tarefa()
         }
     }
 
