@@ -11,7 +11,7 @@ import br.edu.unisep.todolist.model.converter.LocalDateConverter
 import br.edu.unisep.todolist.model.entity.Tarefa
 import kotlinx.android.synthetic.main.item_tarefa.view.*
 
-class TarefaAdapter(val tarefas : List<Tarefa>)
+class TarefaAdapter(val tarefas : List<Tarefa>, val fnSelecao : (Int) -> Unit)
     : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, pos: Int): TarefaViewHolder {
@@ -38,6 +38,10 @@ class TarefaAdapter(val tarefas : List<Tarefa>)
             2 -> Color.parseColor("#ffb74d")
             else -> Color.parseColor("#e57373")
         })
+
+        holder.itemView.setOnClickListener {
+            fnSelecao(t.id!!)
+        }
     }
 
 
