@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         dao = db.reuniaoDAO()
 
         listaReunioes.layoutManager = LinearLayoutManager(this)
-        listaReunioes.adapter = ReuniaoAdapter(reunioes)
+        listaReunioes.adapter = ReuniaoAdapter(reunioes, this::selecionarReuniao)
     }
 
     private fun listar() {
@@ -50,6 +50,11 @@ class MainActivity : AppCompatActivity() {
         listar()
     }
 
+    fun selecionarReuniao(id : Int) {
+        val i = Intent(this, ListaTopicosActivity::class.java)
+        i.putExtra("reuniao", id)
 
+        startActivityForResult(i, 2)
+    }
 
 }

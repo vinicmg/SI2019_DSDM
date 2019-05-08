@@ -8,6 +8,10 @@ import br.edu.unisep.mymeeting.model.entity.Topico
 @Dao
 interface TopicoDAO {
 
+    @Insert
+    fun salvar(t : Topico)
 
+    @Query("select * from Topico where reuniao = :idReuniao")
+    fun listar(idReuniao : Int) : List<Topico>
 
 }

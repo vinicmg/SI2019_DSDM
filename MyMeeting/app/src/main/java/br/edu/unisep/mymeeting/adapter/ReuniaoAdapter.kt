@@ -8,7 +8,7 @@ import br.edu.unisep.mymeeting.R
 import br.edu.unisep.mymeeting.model.entity.Reuniao
 import kotlinx.android.synthetic.main.item_reuniao.view.*
 
-class ReuniaoAdapter(val reunioes : List<Reuniao>) :
+class ReuniaoAdapter(val reunioes : List<Reuniao>, val fnSelecao : (Int) -> Unit) :
     RecyclerView.Adapter<ReuniaoAdapter.ReuniaoViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, pos: Int): ReuniaoViewHolder {
@@ -30,6 +30,10 @@ class ReuniaoAdapter(val reunioes : List<Reuniao>) :
             lblAssunto.text = r.assunto
             lblDia.text = r.data!!.dayOfMonth.toString()
             lblMes.text = r.data!!.month.name
+        }
+
+        holder.itemView.setOnClickListener {
+            fnSelecao(r.id!!)
         }
     }
 

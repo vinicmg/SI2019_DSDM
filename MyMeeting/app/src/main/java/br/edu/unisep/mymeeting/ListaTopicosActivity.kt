@@ -16,15 +16,20 @@ class ListaTopicosActivity : AppCompatActivity() {
     private lateinit var dao : TopicoDAO
     private val topicos = arrayListOf<Topico>()
 
+    private var reuniao : Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_topicos)
+
+        reuniao = intent.getIntExtra("reuniao", -1)
 
         configurarLista()
         listar()
 
         btnAddTopico.setOnClickListener {
             val i = Intent(this, NovoTopicoActivity::class.java)
+            i.putExtra("reuniao", reuniao)
             startActivityForResult(i, 1)
         }
     }
@@ -38,7 +43,12 @@ class ListaTopicosActivity : AppCompatActivity() {
     }
 
     private fun listar() {
+        val lst = dao.listar(reuniao)
 
+        topicos.clear()
+        topicos.addAll(lst)
+
+        listaTopicos.adapter?.notifyDataSetChanged()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
